@@ -1,0 +1,175 @@
+/* ============================================
+   EXPERIENCE — Editorial Brutalist Timeline
+   ============================================ */
+.experience {
+  background-color: var(--color-bg);
+}
+
+.experience__inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+/* Left Column */
+.experience__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  position: sticky;
+  top: calc(var(--nav-h) + var(--sp-8));
+}
+
+.experience__title {
+  font-size: clamp(1.55rem, 2.1vw, 2.05rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  max-width: 100%;
+}
+
+.experience__note {
+  max-width: 240px;
+  border-left: 2px solid var(--color-border-dark);
+  padding-left: var(--sp-3);
+  color: var(--color-ink-mid);
+}
+
+/* Right Column / List */
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+}
+
+/* Experience Card */
+.experience-card {
+  padding-bottom: var(--sp-12);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  transition: transform var(--t-base) var(--ease-out);
+}
+
+.experience-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.experience-card:hover {
+  transform: translateX(6px);
+}
+
+.experience-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.experience-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.experience-card__period {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  font-weight: var(--fw-semibold);
+  color: var(--color-ink-muted);
+}
+
+.experience-card__type {
+  font-size: var(--text-xs);
+  padding: 2px 8px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-ink-mid);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.experience-card__role {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: var(--fw-bold);
+  color: var(--color-ink);
+  letter-spacing: var(--ls-tight);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+.experience-card__company {
+  font-size: var(--text-base);
+  color: var(--color-ink-light);
+  font-weight: var(--fw-medium);
+}
+
+.experience-card__desc {
+  max-width: 660px;
+  line-height: var(--lh-relaxed);
+  color: var(--color-ink-mid);
+}
+
+/* Contributions */
+.experience-card__contributions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  padding-top: var(--sp-4);
+  border-top: 1px dashed var(--color-border);
+}
+
+.experience-card__contrib-title {
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+}
+
+.experience-card__points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.experience-card__point {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--text-sm);
+  line-height: var(--lh-normal);
+  color: var(--color-ink-mid);
+  max-width: 640px;
+}
+
+.experience-card__bullet {
+  color: var(--color-ink-light);
+  font-weight: var(--fw-bold);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .experience__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-10);
+  }
+
+  .experience__left {
+    position: static;
+  }
+
+  .experience__note {
+    max-width: 100%;
+  }
+
+  .experience-card:hover {
+    transform: none;
+  }
+}

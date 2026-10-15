@@ -1,0 +1,108 @@
+/* ============================================
+   SKILLS — Two column editorial
+   ============================================ */
+.skills {
+  background-color: var(--color-bg-alt);
+}
+
+.skills__inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  align-items: start;
+}
+
+/* Left */
+.skills__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  position: sticky;
+  top: calc(var(--nav-h) + var(--sp-8));
+}
+
+.skills__left .eyebrow {
+  display: block;
+}
+
+.skills__title {
+  font-size: clamp(1.55rem, 2.1vw, 2.05rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  max-width: 100%;
+}
+
+.skills__note {
+  max-width: 240px;
+  border-left: 2px solid var(--color-border-dark);
+  padding-left: var(--sp-3);
+}
+
+/* Groups */
+.skills__groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.skill-group {
+  padding: var(--sp-8) 0;
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+.skill-group:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.skill-group__label {
+  padding-top: 3px;
+  color: var(--color-ink-muted);
+}
+
+.skill-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.skill-item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--r-pill);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-regular);
+  color: var(--color-ink-mid);
+  transition: all var(--t-fast) var(--ease-out);
+  cursor: default;
+}
+
+.skill-item:hover {
+  background-color: var(--color-ink);
+  color: var(--color-bg);
+  border-color: var(--color-ink);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .skills__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  .skills__left {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-group {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}
